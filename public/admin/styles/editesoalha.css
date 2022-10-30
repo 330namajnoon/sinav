@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 1440px;
+    height: 80px;
+    background-color: #FF7D7D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo {
+    width: 480px;
+    height: 70px;
+    margin: 15px 450px 0 0px;
+}
+
+.home {
+    width: 35px;
+    height: 40px;
+    margin-left: 30px;
+}
+
+.soru_ekle_paszamine {
+    width: 1440px;
+    height: auto;
+    padding: 50px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5D5D5D;
+}
+
+.soal_div {
+    width: 889px;
+    height: 63px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.soal_input {
+    width: 760px;
+    height: 63px;
+    border: solid 2px #FF7D7D;
+    border-radius: 10px;
+    background-color: #EAEAEA;
+    font-family: 'Itim';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 48px;
+    padding: 0 20px 0 20px;
+}
+
+.javab_add {
+    width: 63px;
+    height: 63px;
+}
+
+.javab_div {
+    margin-top: 25px;
+    width: 889px;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.javab_text {
+    width: 680px;
+    height: 55px;
+    border: solid 2px #FF7D7D;
+    border-radius: 10px;
+    background-color: #EAEAEA;
+    color: black;
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 0 20px 0 20px;
+}
+
+.javab_check {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #FF7D7D;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+
+}
+
+.javab_delete {
+    width: 63px;
+    height: 55px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #FF7D7D;
+    color: #EAEAEA;
+    font-size: 25px;
+}
+
+.add_img {
+    width: 80px;
+    height: 80px;
+    margin-top: 30px;
+}
+.delete {
+    width: 200px;
+    height: 50px;
+    background-color: #ff5b5b;
+    border-radius: 5px;
+    border: 0;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+   
+}
+
+
+
+
+
+
+
+
+
+
+.soru_paszamine {
+    position: relative;
+    width: 1440px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0 80px 0;
+    transition: all 1s;
+}
+.soru_delete {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: none;
+    transition: 1s all;
+}
+
+.soru_paszamine:hover .soru_delete{
+    display: block;
+}
+.soru_paszamine:hover {
+    background-color: #e2e2e2;
+}
+
+.soru_div {
+    width: 1110px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+
+}
+
+.soru_punt {
+    width: 20px;
+    height: 20px;
+    background-color: #FF7D7D;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.soru_soal {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #000000;
+    margin-left: 50px;
+
+}
+
+.javab2_paszamine {
+    width: 1028px;
+    display: flex;
+    flex-direction: row;
+   
+    margin-bottom: 20px;
+    margin-left: 80px;
+}
+
+.javab2_check {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid 2px #FF7D7D;
+}
+
+.javab2_javab {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    margin-left: 30px;
+    color: #000000;
+}
