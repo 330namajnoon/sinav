@@ -50,6 +50,31 @@ function ObjectDelete(array,element,value) {
     return array_;
 }
 
+function Siralama(array = [],val = "") {
+    let siralanmis = Array(array.length);
+    for (let index = 0; index < array.length; index++) {
+        let v1 = array[index][val];
+        let sira = 0;
+        for (let index_ = 0; index_ < array.length; index_++) {
+            let v2 = array[index_][val];
+            if(v2 < v1 && index !== index_) sira++;
+        }
+
+        let no = 0;
+        let w = false;
+        while(w == false) {
+            if (siralanmis[sira+no] == null) {
+                siralanmis[sira+no] = array[index];
+                w = true;
+            }else {
+                no ++;
+            }
+        }
+        
+    }
+    return siralanmis;
+} 
+
 let zaban = {
     kaydet: "save",
     nam: "Name",
@@ -63,4 +88,4 @@ let zaban = {
 }
 
 
-export {CrateElement,SerchElement,ObjectDelete,zaban};
+export {CrateElement,SerchElement,ObjectDelete,Siralama,zaban};

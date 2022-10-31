@@ -64,6 +64,7 @@ function Login() {
 
 
 function RabeteKarbari() {
+    this.emtehanData = [];
     this.body = document.querySelector("body");
     this.header = CrateElement({ name: "div", class: "header" });
     this.logo = CrateElement({ name: "img", class: "logo", src: "../images/logo.png" });
@@ -74,8 +75,8 @@ function RabeteKarbari() {
     this.login = new Login();
     this.natije_paszamine = CrateElement({name:"div",class:"natije_paszamine"});
     this.natije_emtiyaz = CrateElement({name:"input",type:"button",value:"0",class:"natije"});
-    this.enviar = CrateElement({name:"input",type:"button",value:zaban.print,class:"button"});
-    this.print = CrateElement({name:"input",type:"button",value:zaban.ersal,class:"button"});    
+    this.enviar = CrateElement({name:"input",type:"button",value:zaban.ersal,class:"button"});
+    this.print = CrateElement({name:"input",type:"button",value:zaban.print,class:"button"});    
     this.soalha = [];
     this.Crate();
 
@@ -84,11 +85,23 @@ function RabeteKarbari() {
         this.mohasebeEmtiyaz();
     })
 
+    this.print.addEventListener("click",() => {
+        this.print.style.display = "none";
+        this.enviar.style.display = "none";
+        print();
+        this.print.style.display = "block";
+        this.enviar.style.display = "block";
+    })
+    this.enviar.addEventListener("click",()=> {
+        socket.emit("user_natayej",{name:localStorage.getItem("username"),numero:Number(this.natije_emtiyaz.value)});
+        this.payan_a.click();
+    })
+
 }
 RabeteKarbari.prototype.Crate = function () {
     this.header.appendChild(this.logo);
     this.body.appendChild(this.header);
-    // this.body.appendChild(this.zamansanj);
+    this.body.appendChild(this.zamansanj);
     this.body.appendChild(this.loading);
     this.body.appendChild(this.payan_a);
     this.natije_paszamine.appendChild(this.natije_emtiyaz);
@@ -97,13 +110,9 @@ RabeteKarbari.prototype.Crate = function () {
     this.body.appendChild(this.natije_paszamine);
 }
 RabeteKarbari.prototype.timer = function (zaman) {
-
     let dakika = Math.floor(zaman) - 1;
     let saniye = 60;
     let durum = true;
-
-
-
     setInterval(() => {
 
         if (durum == true) {
@@ -151,9 +160,20 @@ RabeteKarbari.prototype.mohasebeEmtiyaz = function () {
     })
 
     let miyangin = ((10 / javahayeSahih) * emtiyaz);
+    this.zamansanj.remove();
+    this.natije_paszamine.style.display = "flex";
+    this.natije_emtiyaz.value = miyangin;
 
 
 
+}
+RabeteKarbari.prototype.emtehanLoader = function() {
+    this.emtehanData.forEach(e => {
+        this.soalha.push(new Soru(e));
+    })
+    this.soalha.forEach(e => {
+        this.body.appendChild(e.paszamine);
+    })
 }
 
 
@@ -161,20 +181,14 @@ RabeteKarbari.prototype.mohasebeEmtiyaz = function () {
 rabetekarbari = new RabeteKarbari();
 
 socket.on("emtehan_load", (data) => {
-    let data_ = JSON.parse(data);
-    data_.forEach(e => {
-        rabetekarbari.soalha.push(new Soru(e));
-    })
-    rabetekarbari.soalha.forEach(e => {
-        rabetekarbari.body.appendChild(e.paszamine);
-    })
+    rabetekarbari.emtehanData = JSON.parse(data);
     localStorage.removeItem("username");
     if (localStorage.getItem("username") !== null) {
 
         socket.emit("user_add", { name: localStorage.getItem("username"), numero: 0 });
         rabetekarbari.loading.src = "../images/loading2.gif";
     } else {
-        // rabetekarbari.body.appendChild(rabetekarbari.login.paszamine);
+        rabetekarbari.body.appendChild(rabetekarbari.login.paszamine);
     }
 
 })
@@ -182,6 +196,7 @@ socket.on("emtehan_shoru", (zaman) => {
     if (localStorage.getItem("username") !== null) {
         rabetekarbari.timer(zaman);
         rabetekarbari.loading.remove();
+        rabetekarbari.emtehanLoader();
     }
 })
-rabetekarbari.loading.remove();
+//rabetekarbari.loading.remove();

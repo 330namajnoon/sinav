@@ -49,6 +49,7 @@ const socketio = require("socket.io");
 const io = socketio(server);
 
 let emtehan = false;
+let users = [];
 io.on('connection',(client)=> {
     console.log("new web connect");
     //////////  users
@@ -58,6 +59,13 @@ io.on('connection',(client)=> {
             client.emit("emtehan_load",data.toString());
         })
     } 
+
+    client.on("user_natayej",(data)=> {
+        users.push(data);
+    })
+    client.on("users_load",() => {
+        io.emit("users_load",users);
+    })
 
     client.on("emtehan_load",(name)=> {
         fs.readFile(`./database/${name}.json`,(err,data)=> {
@@ -79,6 +87,7 @@ io.on('connection',(client)=> {
     //////////  admin
     client.on("soalha_load",()=> {
         emtehan = false;
+        users = [];
         fs.readFile("./database/soalha.json",(err,data)=> {
             if(err) throw err;
             client.emit("soalha_load",data.toString());
