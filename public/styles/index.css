@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loading {
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+}
+.login_paszamine {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 100px;
+}
+.login_paszamine input[type="text"] {
+    width: 500px;
+    height: 100px;
+    outline: none;
+    border: #FF7D7D solid 2px;
+    border-radius: 10px;
+    color: #000000;
+    font-size: 40px;
+    background-color: #e2e2e2;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    box-shadow: 2px 2px 8px #FF7D7D,2px 2px 8px gray;
+}
+.login_paszamine input[type="button"] {
+    width: 250px;
+    height: 104px;
+    margin-left: 20px;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    color: aliceblue;
+    font-size: 40px;
+    background-color: #FF7D7D;
+    box-shadow: 2px 2px 8px #8f8f8f;
+}
+
+.header {
+    width: 1440px;
+    height: 80px;
+    background-color: #FF7D7D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.logo {
+    width: 480px;
+    height: 70px;
+    margin: 15px 0px 0 0px;
+}
+.zamansanj {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    border: 4px solid #FF7D7D;
+    background-color: white;
+    color: #FF7D7D;
+    font-size: 40px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    margin: 30px 0 30px 0;
+    
+}
+
+.soru_paszamine {
+    position: relative;
+    width: 1440px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0 80px 0;
+    transition: all 1s;
+}
+.soru_delete {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: none;
+    transition: 1s all;
+}
+
+.soru_paszamine:hover .soru_delete{
+    display: block;
+}
+.soru_paszamine:hover {
+    background-color: #e2e2e2;
+}
+
+.soru_div {
+    width: 1110px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+
+}
+
+.soru_punt {
+    width: 20px;
+    height: 20px;
+    background-color: #FF7D7D;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.soru_soal {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #000000;
+    margin-left: 50px;
+
+}
+
+.javab2_paszamine {
+    width: 1028px;
+    display: flex;
+    flex-direction: row;
+   
+    margin-bottom: 20px;
+    margin-left: 80px;
+}
+
+.javab2_check {
+    appearance: none;
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 2px #FF7D7D;
+}
+
+.javab2_check:checked {
+    background-color: #FF7D7D;
+}
+
+.javab2_javab {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    margin-left: 30px;
+    color: #000000;
+}

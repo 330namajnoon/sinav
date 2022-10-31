@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 1440px;
+    height: 80px;
+    background-color: #FF7D7D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.logo {
+    width: 480px;
+    height: 70px;
+    margin: 15px 450px 0 0px;
+}
+
+.home {
+    width: 35px;
+    height: 40px;
+    margin-left: 30px;
+}
+
+.shoru_paszamine {
+    width: 367px;
+    height: 94px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FF7D7D;
+    margin-top: 45px;
+    box-shadow: 2px 2px 5px gray;
+
+}
+.shoru_paszamine h3 {
+    color: #FFFFFF;
+    font-size: 40px;
+    margin: 0 auto;
+   
+}
+
+.shoru_paszamine input[type="text"] {
+    width: 185px;
+    height: 94px;
+    border-radius: 20px;
+    border: solid 2px #FF7D7D;
+    text-align: center;
+    font-size: 30px;
+    color: #FF7D7D;
+    outline: none;
+}
+
+.shoru_paszamine input[type="text"]:hover {
+    box-shadow: 2px 2px 8px gray;
+}
+
+.shoru_paszamine input[type="button"] {
+    width: 180px;
+    border: 0;
+    height: 94px;
+    background-color: #FF7D7D;
+    border-radius: 20px;
+    font-size: 25px;
+    color: aliceblue;
+
+}
+
+.shoru_paszamine:hover {
+    box-shadow: 3px 3px 8px gray;
+}
+
+.emtehan_name {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+    margin-top: 75px;
+    text-shadow: 2px 2px 8px gray;
+    color: #FF7D7D;
+}
+
+.khat {
+    width: 900px;
+    height: 4px;
+    margin-top: 30px;
+    background: #FF7D7D;
+}
+
+.users_paszamine {
+    width: 700px;
+    height: 500px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.users_paszamine::-webkit-scrollbar {
+    width: 0px;
+}
+
+.user_paszamine {
+    width: 400px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #FF7D7D;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.user_paszamine h3 {
+    width: 224px;
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+.user_paszamine h4 {
+    width: 75px;
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+.user_paszamine img {
+   width: 100px;
+   height: 100px;
+
+}

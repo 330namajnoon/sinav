@@ -206,10 +206,16 @@ body {
 }
 
 .javab2_check {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+    appearance: none;
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
     border: solid 2px #FF7D7D;
+}
+
+.javab2_check:checked {
+    background-color: #FF7D7D;
 }
 
 .javab2_javab {

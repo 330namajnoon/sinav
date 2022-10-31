@@ -87,10 +87,10 @@ SoruEkle.prototype.dogrujevapEkle = function(val) {
     console.log(this.javabhayeDorost);
 }
 
-function Javab2(javab) {
+function Javab2(javab,harf) {
     this.paszamine = CrateElement({name:"div",class:"javab2_paszamine"});
     this.chekbox = CrateElement({name:"input",type:"checkbox",class:"javab2_check",value:javab});
-    this.javab = CrateElement({name:"h4",class:"javab2_javab",inerhtml:javab});
+    this.javab = CrateElement({name:"h4",class:"javab2_javab",inerhtml:harf+") "+" "+javab});
     this.Crate();
 }
 Javab2.prototype.Crate = function() {
@@ -99,6 +99,7 @@ Javab2.prototype.Crate = function() {
 }
 
 function Soru(data) {
+    this.horuf = "abcdefg";
     this.data = data;
     this.paszamine = CrateElement({name:"div",class:"soru_paszamine"});
     this.paszamine_s = CrateElement({name:"div",class:"soru_paszamine_s"});
@@ -108,12 +109,12 @@ function Soru(data) {
     this.soal = CrateElement({name:"h3",class:"soru_soal",inerhtml:this.data.soal});
     this.javabha = [];
     for (let index = 0; index < this.data.javabha.length; index++) {
-        this.javabha.push(new Javab2(this.data.javabha[index]));
+        this.javabha.push(new Javab2(this.data.javabha[index],this.horuf.charAt(index)));
     }
 
     this.javabha.forEach(e => {
         this.data.javabhayeDorost.forEach(e_ => {
-            if(e.javab.innerHTML == e_) e.chekbox.click();
+            if(e.chekbox.value == e_) e.chekbox.click();
         })
     })
     

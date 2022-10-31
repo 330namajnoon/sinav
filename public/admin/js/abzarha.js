@@ -56,6 +56,8 @@ let zaban = {
     soal: "soru",
     javab:"cevap",
     sil:"sil",
+    vorud:"giris",
+    dakika:"dakika",
 }
 
 

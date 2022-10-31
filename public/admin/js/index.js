@@ -34,8 +34,10 @@ function Emtehan(name) {
         this.a_vorud.click();
     })
     this.button_shoru.addEventListener("click",()=> {
+        socket.emit("emtehan_load",this.name);
         localStorage.setItem("emtehan_name",this.name);
         this.a_shoru.click();
+        
     })
 
 }

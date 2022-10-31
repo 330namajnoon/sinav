@@ -48,10 +48,35 @@ server.listen(port,()=> {
 const socketio = require("socket.io");
 const io = socketio(server);
 
+let emtehan = false;
 io.on('connection',(client)=> {
     console.log("new web connect");
+    //////////  users
+    if(emtehan !== false){
+        fs.readFile(`./database/${emtehan}.json`,(err,data)=> {
+            if(err) throw err;
+            client.emit("emtehan_load",data.toString());
+        })
+    } 
+
+    client.on("emtehan_load",(name)=> {
+        fs.readFile(`./database/${name}.json`,(err,data)=> {
+            if(err) throw err;
+            io.emit("emtehan_load",data.toString());
+            emtehan = name;
+        })
+    })
+
+    client.on("user_add",(data)=> {
+        io.emit("user_add",data);
+    })
+
+    client.on("emtehan_shoru",(zaman)=> {
+        io.emit("emtehan_shoru",zaman);
+    })
 
 
+    //////////  admin
     client.on("soalha_load",()=> {
         fs.readFile("./database/soalha.json",(err,data)=> {
             if(err) throw err;
