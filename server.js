@@ -78,6 +78,7 @@ io.on('connection',(client)=> {
 
     //////////  admin
     client.on("soalha_load",()=> {
+        emtehan = false;
         fs.readFile("./database/soalha.json",(err,data)=> {
             if(err) throw err;
             client.emit("soalha_load",data.toString());

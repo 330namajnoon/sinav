@@ -58,6 +58,8 @@ let zaban = {
     sil:"sil",
     vorud:"giris",
     dakika:"dakika",
+    print:"print",
+    ersal:"Enviar",
 }
 
 
