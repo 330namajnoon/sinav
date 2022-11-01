@@ -76,15 +76,15 @@ function Siralama(array = [],val = "") {
 } 
 
 let zaban = {
-    kaydet: "save",
-    nam: "Name",
-    soal: "soru",
-    javab:"cevap",
-    sil:"sil",
-    vorud:"giris",
+    kaydet: "Kaydet",
+    nam: "Ad",
+    soal: "Soru",
+    javab:"Cevap",
+    sil:"Sil",
+    vorud:"Giris",
     dakika:"dakika",
     print:"print",
-    ersal:"Enviar",
+    ersal:"Gonder",
 }
 
 

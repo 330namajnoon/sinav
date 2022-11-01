@@ -4,7 +4,7 @@
 }
 
 body {
-    zoom: 70%;
+    
     background-color: #ffffff;
 }
 
@@ -95,14 +95,13 @@ body {
 }
 
 .emtehanat_div {
-    width: 1020px;
+    width: 1440px;
     height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-   
     margin: 30px auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
 }
 
@@ -129,7 +128,6 @@ body {
     line-height: 58px;
     text-align: center;
     color: #000000;
-
 }
 
 .emtehan_b_shoru {

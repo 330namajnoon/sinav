@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    zoom: 70%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,6 +177,7 @@ body {
 }
 
 .soru_punt {
+    position: absolute;
     width: 20px;
     height: 20px;
     background-color: #FF7D7D;
@@ -189,7 +190,7 @@ body {
     font-family: 'Itim';
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 48px;
     text-align: center;
     color: #000000;
@@ -198,6 +199,7 @@ body {
 }
 
 .javab2_paszamine {
+    position: relative;
     width: 1028px;
     display: flex;
     flex-direction: row;
@@ -207,10 +209,12 @@ body {
 }
 
 .javab2_check {
+    position: absolute;
     appearance: none;
     
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    margin: 10px 15px 0 0;
     border-radius: 20px;
     border: solid 2px #FF7D7D;
 }
@@ -223,7 +227,7 @@ body {
     font-family: 'Itim';
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 20px;
     line-height: 48px;
     text-align: center;
     margin-left: 30px;

@@ -80,7 +80,7 @@ function RabeteKarbari() {
     this.soalha = [];
     this.Crate();
 
-    this.loading.style.cssText = `width: ${innerWidth}px;height:${innerHeight}px`
+    this.loading.style.cssText = `width: ${this.header.getBoundingClientRect().width}px;height:${innerHeight}px`
     this.logo.addEventListener("click", () => {
         this.mohasebeEmtiyaz();
     })
